@@ -17,6 +17,10 @@ mongoose.set('strictQuery', false);
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => { console.log("DataBase Connection is successfull"); })
 
+app.get('/', (req, res) => {
+    res.send("The backend is successfully deployed");
+})
+
 app.listen(port, () => {
     console.log("The server is listening on the port " + port);
 });
